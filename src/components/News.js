@@ -26,7 +26,7 @@ export class News extends Component {
   ]
   constructor(){
     super();
-    console.log("Hello I am a Constructor from news component");
+    console.log("Hello I am a Constructor from News component");
     this.state = {
       articles: this.articles,
       loading: false
@@ -36,18 +36,16 @@ export class News extends Component {
     return (
       <div className='container my-3'>
         <h2>DevBytes - Top Headlines</h2>
+        
         <div className="row">
-          <div className="col md-4">
-            <NewsItem title="myTitle" description="My Description" imageUrl="https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1099495_800x450.jpg"/>
-          </div>
+        {this.state.articles.map((element) => {
+          return <div className="col md-4" key={element.url}>
+          <NewsItem title={element.title.slice(0, 45)} description={element.description.slice(0, 88)} imageUrl={element.urlToImage} newsUrl={element.url}/>
+        </div>
+        })}
+          
 
-          <div className="col md-4">
-            <NewsItem title="myTitle" description="My Description"/>
-          </div>
-
-          <div className="col md-4">
-            <NewsItem title="myTitle" description="My Description"/>
-          </div>
+          
         </div>
       </div>
     )
