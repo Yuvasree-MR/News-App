@@ -1,10 +1,15 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react' // 1
+
+import React from 'react'
 import { Link } from 'react-router-dom';
 
-export class NavBar extends Component {
-  
+// 1- class based
+// 2- function based
 
-  render() {
+// export class NavBar extends Component { //1
+
+  // render() { // 1
+  const NavBar = () => { // 2
     return (
       <div>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -32,6 +37,8 @@ export class NavBar extends Component {
       </div>
     )
   }
-}
+  // 1 } 
+
+// 1}
 
 export default NavBar
